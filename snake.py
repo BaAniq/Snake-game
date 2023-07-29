@@ -21,16 +21,17 @@ for segments in range(0, 3):
 
 game_on = True
 move = 20
+i = 1
 while game_on:
     screen.update()
-    time.sleep(1)
-    for segment in segment_list:
-        segment.pu()
-        segment.forward(move)
+    time.sleep(0.1)
 
-
-
-
+    for seg_num in range(len(segment_list)-1, 0, -1):
+        segment_next_x = segment_list[seg_num-1].xcor()
+        segment_next_y = segment_list[seg_num-1].ycor()
+        segment_list[seg_num].goto(segment_next_x, segment_next_y)
+    segment_list[0].forward(move)
+    segment_list[0].left(90)
 
 
 
