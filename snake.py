@@ -1,12 +1,16 @@
 from turtle import Turtle
 movement = 20
-
+down = 270
+up = 90
+left = 180
+right = 0
 
 class Snake:
 
     def __init__(self, ):
         self.segment_list = []
         self.making_segments()
+        self.head = self.segment_list[0]
 
     def making_segments(self):
         x = 0
@@ -28,19 +32,24 @@ class Snake:
 
     def move_forward(self):
         self.move()
-        self.segment_list[0].forward(movement)
+        self.head.forward(movement)
 
     def move_up(self):
-
-        self.segment_list[0].setheading(90)
+        current_direction_angle = self.head.heading()
+        if current_direction_angle != down:
+            self.head.setheading(90)
 
     def move_down(self):
-        self.segment_list[0].setheading(270)
+        current_direction_angle = self.head.heading()
+        if current_direction_angle != up:
+            self.head.setheading(270)
 
     def move_left(self):
-        self.segment_list[0].setheading(180)
+        current_direction_angle = self.head.heading()
+        if current_direction_angle != right:
+            self.head.setheading(180)
 
     def move_right(self):
-        self.segment_list[0].setheading(0)
-
-
+        current_direction_angle = self.head.heading()
+        if current_direction_angle != left:
+            self.head.setheading(0)
