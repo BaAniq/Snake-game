@@ -21,7 +21,7 @@ screen.onkey(fun=snake.move_right, key='Right')
 while game_on:
     screen.update()
     time.sleep(0.1)
-
+    snake.move_forward()
 
 
 
