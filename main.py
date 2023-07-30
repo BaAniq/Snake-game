@@ -28,5 +28,7 @@ while game_on:
 
     if snake.head.distance(food.food) < 15:
         food.placement()
+    if snake.head.xcor() == 300 or snake.head.xcor() == -300 or snake.head.ycor() == 300 or snake.head.ycor() == -300:
+        snake.head.home()
 
 screen.exitonclick()
