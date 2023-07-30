@@ -5,6 +5,7 @@ up = 90
 left = 180
 right = 0
 
+
 class Snake:
 
     def __init__(self, ):
@@ -37,19 +38,19 @@ class Snake:
     def move_up(self):
         current_direction_angle = self.head.heading()
         if current_direction_angle != down:
-            self.head.setheading(90)
+            self.head.setheading(up)
 
     def move_down(self):
         current_direction_angle = self.head.heading()
         if current_direction_angle != up:
-            self.head.setheading(270)
+            self.head.setheading(down)
 
     def move_left(self):
         current_direction_angle = self.head.heading()
         if current_direction_angle != right:
-            self.head.setheading(180)
+            self.head.setheading(left)
 
     def move_right(self):
         current_direction_angle = self.head.heading()
         if current_direction_angle != left:
-            self.head.setheading(0)
+            self.head.setheading(right)
