@@ -43,4 +43,14 @@ while game_on:
         score.adding_point(score_number)
         snake.add_segment()
 
+    # collision
+    for segment in range(1, len(snake.segment_list)):
+        if snake.head.distance(snake.segment_list[segment]) < 1git rm --cachged:
+            snake.head.home()
+            time.sleep(0.5)
+            score.game_over()
+            score_number = 0
+            game_on = False
+
+
 screen.exitonclick()
