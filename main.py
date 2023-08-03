@@ -45,7 +45,7 @@ while game_on:
 
     # collision
     for segment in range(1, len(snake.segment_list)):
-        if snake.head.distance(snake.segment_list[segment]) < 1
+        if snake.head.distance(snake.segment_list[segment]) < 1:
             snake.head.home()
             time.sleep(0.5)
             score.game_over()
