@@ -41,5 +41,6 @@ while game_on:
         food.placement()
         score_number += 1
         score.adding_point(score_number)
+        snake.add_segment()
 
 screen.exitonclick()
