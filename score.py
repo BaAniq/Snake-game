@@ -17,3 +17,8 @@ class Score:
     def adding_point(self, score_num):
         self.text.clear()
         self.text.write(f'Score: {score_num}', False, align='center', font=('Arial', 10, 'normal'))
+
+    def game_over(self):
+        self.text.goto(0, 0)
+        self.text.write('GAME OVER', False, align='center', font=('Arial', 13, 'normal'))
+        

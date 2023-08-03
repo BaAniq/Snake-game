@@ -32,9 +32,10 @@ while game_on:
 
     if snake.head.xcor() > wall or snake.head.xcor() < -wall or snake.head.ycor() > wall or snake.head.ycor() < -wall:
         snake.head.home()
-        time.sleep(1)
-        score.score()
+        time.sleep(0.5)
+        score.game_over()
         score_number = 0
+        game_on = False
 
     if snake.head.distance(food.food) < 15:
         food.placement()
