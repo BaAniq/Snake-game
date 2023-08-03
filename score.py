@@ -11,6 +11,7 @@ class Score:
         self.score()
 
     def score(self):
+        self.text.clear()
         self.text.write('Score: 0', False, align='center', font=('Arial', 10, 'normal'))
 
     def adding_point(self, score_num):
