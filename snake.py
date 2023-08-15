@@ -35,7 +35,6 @@ class Snake:
         self.segment_list.append(new_segment)
         self.segment_list[-1].goto(new_segment_x, new_segment_y)
 
-
     def move(self):
         for seg_num in range(len(self.segment_list) - 1, 0, -1):
             segment_next_x = self.segment_list[seg_num - 1].xcor()
@@ -65,3 +64,8 @@ class Snake:
         current_direction_angle = self.head.heading()
         if current_direction_angle != left:
             self.head.setheading(right)
+
+    def reset(self):
+        self.segment_list.clear()
+        self.making_segments()
+        self.head = self.segment_list[0]

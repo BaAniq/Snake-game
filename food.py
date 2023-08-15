@@ -17,3 +17,9 @@ class Food:
         food_x = randint(-280, 280)
         food_y = randint(-280, 280)
         self.food.goto(food_x, food_y)
+
+    def reset(self):
+        self.food.clear()
+        self.food = Turtle()
+        self.making_food()
+        self.placement()
