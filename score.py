@@ -8,7 +8,9 @@ class Score:
         self.text.goto(0, 280)
         self.text.color('red')
         self.text.hideturtle()
-        self.high_score = 0
+        with open('High_score.txt', 'r') as high_score_file:
+            high_score_file.seek(0)
+            self.high_score = int(high_score_file.read())
         self.score = 0
         self.score_text()
 
@@ -26,6 +28,8 @@ class Score:
 
     def saving_high_score(self, score_num):
         if score_num > self.high_score:
+            with open('High_score.txt', 'w+') as high_score_file:
+                high_score_file.write(str(score_num))
             self.high_score = score_num
 
     def reset(self):

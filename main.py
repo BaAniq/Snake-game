@@ -54,21 +54,20 @@ while game_on:
     time.sleep(0.1)
     snake.move_forward()
 
-    if snake.head.xcor() > wall or snake.head.xcor() < -wall or snake.head.ycor() > wall or snake.head.ycor() < -wall:
-        reset()
-        continue
-
     if snake.head.distance(food.food) < 15:
         food.placement()
         score.score += 1
         score.adding_point(score.score)
         snake.add_segment()
 
+    if snake.head.xcor() > wall or snake.head.xcor() < -wall or snake.head.ycor() > wall or snake.head.ycor() < -wall:
+        reset()
+        continue
+
     # collision
     for segment in range(1, len(snake.segment_list)):
         if snake.head.distance(snake.segment_list[segment]) < 1:
             reset()
-        continue
-
+            break
 
 screen.exitonclick()
